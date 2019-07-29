@@ -1,11 +1,13 @@
 ---
-title: "Binary Installation"
+title: "Installation"
 date: 2019-07-28T10:44:45-07:00
 draft: false
 weight: 20
 ---
 
-Socrates is available for Linux, MacOS, and Windows (32 & 64 bit). All releases are available at the https://github.com/rpwatkins/socrates/releases[Socrates releases] page at Github.
+= Installation
+
+Socrates is available for Linux, MacOS, and Windows (32 & 64 bit). All releases are available at the https://github.com/rpwatkins/socrates/releases[Socrates releases] page at Github. To install on your operating system, see the appropriate instructions below.
 
 {{% notice note %}} 
 Note: The instructions below install the 64 bit build. 32 bit builds are also available from the https://github.com/rpwatkins/socrates/releases[release page].
@@ -13,6 +15,8 @@ Note: The instructions below install the 64 bit build. 32 bit builds are also av
 
 
 == GNU/Linux
+
+To install on any GNU/Linux operating system (Ubuntu, Red Hat, Debian, Manjaro, etc.), run these commands in the terminal:
 
 [source,console]
 ----
@@ -22,6 +26,8 @@ sudo mv socrates /usr/local/bin/socrates
 ----
 
 == MacOS
+
+To install on MAC operating system, run these commands in the terminal:
 
 [source,console]
 ----
@@ -34,5 +40,14 @@ mv buffalo ~/bin/socrates
 
 == Windows
 
-Download the windows release from the https://github.com/rpwatkins/socrates/releases[Releases page], extract the socrates.exe file, and place the socrates executable somewhere on your path.
+Download the windows release from the https://github.com/rpwatkins/socrates/releases[Releases page], extract the socrates.exe file, and place the socrates executable somewhere on your system https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/[path]. 
 
+
+== Source Install
+
+If you have Go installed, Socrates can be installed via source code as follows:
+
+[source,console]
+----
+go get -u github.com/rpwatkins/socrates
+----

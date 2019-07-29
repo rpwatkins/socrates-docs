@@ -19,9 +19,7 @@ Socrates requires a working Ruby installation and the following gems:
 * asciidoctor-diagram
 * rouge
 
-To install Ruby, MacOS and Linux users can use their package manager. Windows users can use the packages at https://rubyinstaller.org[RubyInstaller]. Socrates has been tested with Ruby 2.5.x. Once Ruby is installed, please install the following ruby gems as follows:
-
-To install the needed gems:
+To install Ruby, MacOS and Linux users can use their package manager. Windows users can use the packages at https://rubyinstaller.org[RubyInstaller]. Socrates has been tested with Ruby 2.5.x. Once Ruby is installed, please install the above-mentioned Ruby gems as follows: 
 
 [source,console]
 ----
@@ -29,20 +27,20 @@ gem install asciidoctor asciidoctor-diagram asciidoctor-bibliography rouge
 gem install asciidoctor-pdf --pre
 ----
 
-=== Fonts
+==== Asciidoctor-pdf
 
-Fonts are used when producing PDFs using asciidoctor-pdf. Out of the box, Socrates support three fonts:
+Sane defaults have been chosen for the default PDF output. You are not required to use the default style configuration found in the _default-theme.yml_ file in the _src/resources/pdfstyles_ folder.
 
-* Noto Serif (available at https://fonts.google.com/specimen/Noto+Serif?selection.family=Noto+Serif)[Google Fonts]) is the primary font. It has very good language support and has a clean appearance.
+The default configuration does require some additional fonts. Socrates default PDF style configuration requires three fonts:
+
+* Noto Serif (available at https://fonts.google.com/specimen/Noto+Serif?selection.family=Noto+Serif)[Google Fonts]) is the primary font. Noto Serif has very good language support and has a clean appearance.
 * M+ 1nm and M+ 1p (https://github.com/rayshan/mplus-fonts[available here]) are fallback fonts and are used for some symbols.
 
-Download the fonts and use your operating system font tool to install the fonts.
-
-You are not required to use the default fonts. Fonts can be changed by editing the font section of the _default-theme.yml_ file in the _src/resources/pdfstyles_ folder.
+To use the default style configuration, you must download the fonts and use your operating system font tool to install them.
 
 === Source Highlighting
 
-Source highlighting is supported through asciidoctor, It relies on the http://rouge.jneen.net[rouge] gem. See the https://asciidoctor.org/docs/user-manual/#rouge[Asciidoctor Manual] for instructions on how to enable/disable rouge support through attributes found in _master.adoc_ and how to add source blocks to an asciidoc file. Rouge is enabled by default.
+Source highlighting is supported through asciidoctor. It relies on the http://rouge.jneen.net[rouge] gem we installed earlier. See the https://asciidoctor.org/docs/user-manual/#rouge[Asciidoctor Manual] for instructions on how to enable/disable rouge support through attributes found in _master.adoc_ and how to add source blocks to an asciidoc file. Rouge is enabled by default.
 
 === Asciidoctor-fopub Support (optional)
 

@@ -7,9 +7,9 @@ weight: 10
 
 == Creating a New Project
 
-Create a new folder with a short name for your manuscript, e.g., "writing-project". This name will be used for the file name of the compiled manuscript.
+Create a new folder with a short name for your manuscript, e.g., _hume-causation_. This name will be used for the file name of the compiled manuscript files (PDF or HTML).
 
-From within the new folder, initialize a Socrates project:
+From within the new folder, _hume-causation_ in our example, initialize a Socrates project:
 
 [source,console]
 ----
@@ -22,32 +22,36 @@ The init command creates the folder structure and preliminary files for a manusc
 
 Within the _src_ folder, the following folders are created:
 
-*assets*: to hold any files not used to compile your manuscript that you may wish to keep associated with the manuscript(e.g., PDFs of papers cited, notes, etc.).
+*assets/*: to hold any files not used to compile your manuscript that you may wish to keep associated with the manuscript(e.g., PDFs of papers cited, notes, etc.).
 
-*back_matter*: to hold elements of a manuscript that follow the main text (e.g., appendix, bibliography, colophon, glossary, and index).
+*back_matter/*: to hold elements of a manuscript that follow the main text (e.g., appendix, bibliography, colophon, glossary, and index).
 
-*front_matter*: to hold elements of a manuscript prior to the main text (e.g., abstract, dedication, preface)
+*front_matter/*: to hold elements of a manuscript prior to the main text (e.g., abstract, dedication, preface)
  
-*images*: to hold images used in the manuscript
+*images/*: to hold images used in the manuscript
 
-*parts*: to hold manuscript parts and chapters.
+*parts/*: to hold manuscript parts and chapters.
 
-*resources*: to hold PDF and HTML styles used to generate manuscript
+*resources/*: to hold PDF and HTML styles used to generate manuscript
 
 === Files
 
 The init command also created several files:
 
-*src files*: _master.adoc_ (contains manuscript attributes and include directives) and references.bib (a placeholder file for references)
+*src/*: _master.adoc_ (which contains manuscript _attributes_ statements and _include_ directives) and references.bib (which contains or will contain bibtex compliant references).
 
-*src/back_matter files*: _bibliography.adoc_, _colophon.adoc_, _glossary.adoc_, _index.adoc_, and _01_appendix.adoc_ (appendix is numbered since there may be more than one appendix).
+*src/back_matter/*: _bibliography.adoc_, _colophon.adoc_, _glossary.adoc_, _index.adoc_, and _01_appendix.adoc_.
 
-*src/front_matter files*: _abstract.adoc_, _dedication.adoc_, and _preface.adoc_.
+*src/front_matter/*: _abstract.adoc_, _dedication.adoc_, and _preface.adoc_.
 
-*src/resources*: A default PDF style is also saved to _src/resources/pdfstyles/default-style.yml_.
+*src/resources/pdfstyles/*: _default-style.yml_ (the default Asciidoctor-pdf style configuration file)
 
 {{% notice note %}}
-_src/master.adoc_ contains _include_ directives for all the above files. If you do not need one or more of the default files in your manuscript, simply delete the _include_ directive in _master.adoc_. 
+_master.adoc_ contains _include_ directives for all the above files. If you do not need one or more of the default files in your manuscript, simply delete the _include_ directive in _master.adoc_. 
+{{% /notice %}}
+
+{{% notice tip %}}
+_01_appendix.adoc_, you'll have noticed, is prefixed with a two digit number. Like parts and chapters, a manuscript can have multiple appendixes. Since there may be more than one appendix, naming them with a numerical prefix makes the files appear in the same order in file browsers as they appear in your _master.adoc_. 
 {{% /notice %}}
 
 == Manuscript Configuration
@@ -58,7 +62,7 @@ Manuscripts are configured in the master.adoc file on the _src_ folder.
 
 Attributes are listed at the top of the master.adoc file. Some are self-explanatory, others less so. See https://asciidoctor.org/docs/user-manual/#attributes[attributes] section of the Asciidoctor manual for more information.
 
-One of the benefits of using asciidoctor is its very useful _include_ directive. This allows an asciidoc manuscript tp be broken into several files that are then "reassembled" when the manuscript is compiled. Here is a snippet from master.adoc that illustrates how the _include_ directive is used to perform this "reassembly":
+One of the benefits of using asciidoctor is its very useful _include_ directive. This allows an asciidoc manuscript to be broken into several files, disassembled one might say, that are then reassembled when the manuscript is compiled. Here is a snippet from _master.adoc_ that illustrates how the _include_ directive is used to perform this reassembly:
 
 [source,console]
 ....
@@ -87,11 +91,11 @@ Notice that the _include_ directives for the index are enclosed in an if...then 
 
 === Manuscripts with Parts (default)
 
-The _include_ directives reassemble the manuscript in the order of appearance. The above set of _include_ directives is for a manuscript with multiple parts, each with a set of chapters. This is the default setup created with the _init_ command.
+The _include_ directives reassemble the manuscript in the order of appearance in _master.adoc_. The above set of _include_ directives is for a manuscript with multiple parts, each with a set of chapters. This is the default setup created with the _init_ command.
 
 === Manuscripts without Parts 
 
-Not all manuscripts need parts. In that case, simply remove the include for the _01_part.adoc_ file. Also, remove the _leveloffset_ for chapters (see the Asciidoctor Manual).
+Not all manuscripts need parts. In that case, simply remove the _include_ directive for the _01_part.adoc_ file. Also, remove the _leveloffset_ for chapters (see the https://asciidoctor.org/docs/user-manual/#include-partitioning[Asciidoctor Manual] for more on _include_ directives and the _leveloffset_ setting).
 
 [source,console]
 ....

@@ -1,0 +1,5 @@
+. decide on next version number.
+. update readme.adoc as well as binary.adoc in the documentation.
+. run release.
+. commit socrates project.
+. commit socreates-docs project.
