@@ -19,7 +19,11 @@ Socrates requires a working Ruby installation and the following gems:
 * asciidoctor-diagram
 * rouge
 
-To install Ruby, MacOS and Linux users can use their package manager. Windows users can use the packages at https://rubyinstaller.org[RubyInstaller]. Socrates has been tested with Ruby 2.5.x. Once Ruby is installed, please install the above-mentioned Ruby gems as follows: 
+To install Ruby, MacOS and Linux users can use their OS package manager. Windows users can use the installation packages at https://rubyinstaller.org[RubyInstaller]. Once Ruby is installed, please install the above-mentioned Ruby gems as follows: 
+
+{{% notice note %}} 
+Socrates has been tested with Ruby 2.5.x.
+{{% /notice %}}
 
 [source,console]
 ----
@@ -27,23 +31,29 @@ gem install asciidoctor asciidoctor-diagram asciidoctor-bibliography rouge
 gem install asciidoctor-pdf --pre
 ----
 
-==== Asciidoctor-pdf
+https://asciidoctor.org[Asciidoctor] and https://github.com/asciidoctor/asciidoctor-pdf[Asciidoctor-pdf] are the tools used behind the scenes by Socrates to generate an HTML or PDF file.
 
-Sane defaults have been chosen for the default PDF output. You are not required to use the default style configuration found in the _default-theme.yml_ file in the _src/resources/pdfstyles_ folder.
+Source highlighting is supported directly through asciidoctor when the http://rouge.jneen.net[rouge] gem is installed. See the https://asciidoctor.org/docs/user-manual/#rouge[Asciidoctor Manual] for instructions on how to enable/disable rouge support through attributes found in _master.adoc_ and how to add source blocks to an asciidoc file. Rouge is enabled by default.
 
-The default configuration does require some additional fonts. Socrates default PDF style configuration requires three fonts:
+https://mermaidjs.github.io/#/[Mermaid] (and many other) diagram tools are supported through https://github.com/asciidoctor/asciidoctor-diagram[Asciidoctor-diagram]. 
+
+Citation and bibliography support is provided by the https://github.com/riboseinc/asciidoctor-bibliography[Asciidoctor-bibliography] tool.
+
+Please review the web sites for those tools to learn how to configure and use them.
+
+=== Asciidoctor-pdf Style Fonts
+
+Sane defaults have been chosen for the default PDF output from Asciidoctor-pdf. The default configuration requires fonts which may not be installed on your system. Socrates default PDF style configuration requires three fonts:
 
 * Noto Serif (available at https://fonts.google.com/specimen/Noto+Serif?selection.family=Noto+Serif)[Google Fonts]) is the primary font. Noto Serif has very good language support and has a clean appearance.
 * M+ 1nm and M+ 1p (https://github.com/rayshan/mplus-fonts[available here]) are fallback fonts and are used for some symbols.
 
 To use the default style configuration, you must download the fonts and use your operating system font tool to install them.
 
-=== Source Highlighting
-
-Source highlighting is supported through asciidoctor. It relies on the http://rouge.jneen.net[rouge] gem we installed earlier. See the https://asciidoctor.org/docs/user-manual/#rouge[Asciidoctor Manual] for instructions on how to enable/disable rouge support through attributes found in _master.adoc_ and how to add source blocks to an asciidoc file. Rouge is enabled by default.
+You are not required to use the default style configuration found in the _default-theme.yml_ file in the _src/resources/pdfstyles_ folder. Not only can you select different fonts, but a host of other settings. See the https://github.com/asciidoctor/asciidoctor-pdf/blob/master/docs/theming-guide.adoc[Asciidoctor-pdf Theming Guide] for more information.
 
 === Asciidoctor-fopub Support (optional)
 
-Socrates can also generate PDF files using the https://github.com/asciidoctor/asciidoctor-fopub[asciidoctor-fopub] tool-chain. See the asciidoctor-fopub github repository for instructions on installing the tool-chain. 
+Socrates can also generate PDF files using the Asciidoctor-fopub tool-chain. See the https://github.com/asciidoctor/asciidoctor-fopub[Asciidoctor-fopub] github repository for instructions on installing the tool-chain. 
 
-Once installed, make sure the _fopub_ executable is in your path statement so that Socrates can find the tool-chain.
+Once installed, make sure the path to the _fopub_ executable is in your path environment variable so that Socrates can find the tool-chain.
