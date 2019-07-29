@@ -15,7 +15,7 @@ home = [ "HTML", "RSS", "JSON"]
 themeVariant = "blue"
 
 [[menu.shortcuts]] 
-name = "<i class='fab fa-github'></i> Github repo"
+name = "<i class='fab fa-github'></i> Github Repo"
 identifier = "ds"
 url = "https://github.com/rpwatkins/socrates"
 weight = 10
