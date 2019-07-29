@@ -44,7 +44,7 @@ socrates fopub
 
 This will create a PDF in the _builds_ folder.
 
-See the Prerequisites page for details on installing Asciidoctor-fopub.
+See the link:../../getting-started/prereqs[Prerequisites] page for details on installing Asciidoctor-fopub.
 
 === Building a DocBook 5 XML File
 
@@ -56,8 +56,6 @@ socrates docbook
 ----
 
 This will create a PDF in the _builds_ folder.
-
-See the Prerequisites page for details on installing Asciidoctor-fopub.
 
 === Cleaning Builds 
 

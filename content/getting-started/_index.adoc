@@ -7,4 +7,4 @@ weight: 10
 
 = Installing Socrates
 
-The following pages explain how to install Socrates and its pre-requisites.   
+The following pages explain how to install Socrates and its prerequisites.   

@@ -19,9 +19,13 @@ Socrates requires a working Ruby installation and the following gems:
 * asciidoctor-diagram
 * rouge
 
-To install Ruby, MacOS and Linux users can use their OS package manager. Windows users can use the installation packages at https://rubyinstaller.org[RubyInstaller]. Once Ruby is installed, please install the above-mentioned Ruby gems as follows: 
+To install Ruby, MacOS and Linux users can use their OS package manager. Windows users can use the installation packages at https://rubyinstaller.org[RubyInstaller]. 
 
+{{% notice note %}} 
+Socrates has been tested with Ruby 2.5.x.
+{{% /notice %}}
 
+Once Ruby is installed, please install the above-mentioned Ruby gems as follows: 
 
 [source,console]
 ----
@@ -38,10 +42,6 @@ https://mermaidjs.github.io/#/[Mermaid] (and many other) diagram tools are suppo
 Citation and bibliography support is provided by the https://github.com/riboseinc/asciidoctor-bibliography[Asciidoctor-bibliography] tool.
 
 Please review the web sites for those tools to learn how to configure and use them.
-
-{{% notice note %}} 
-Socrates has been tested with Ruby 2.5.x.
-{{% /notice %}}
 
 === Asciidoctor-pdf Style Fonts
 
