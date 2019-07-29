@@ -17,4 +17,4 @@ https://www.zotero.org[Zotero], an open source reference manager, has excellent 
 
 Any text editor can be used to edit manuscript files. I recommend https://code.visualstudio.com[Visual Studio Code] because it has very good support for asciidoc files. VS Code with the https://marketplace.visualstudio.com/items?itemName=joaompinto.asciidoctor-vscode[asciidoc extension] provides live preview, syntax highlighting, and more.
 
-Also, if you choose to use VS Code, there is a very useful https://marketplace.visualstudio.com/items?itemName=mblode.zotero[Zotero connector] that allows placing citations directly in the editor right from VS Code.
+Also, if you choose to use VS Code, there is a very useful https://marketplace.visualstudio.com/items?itemName=mblode.zotero[Zotero connector] that allows placing citations directly in the editor right from VS Code. Also check out the https://marketplace.visualstudio.com/items?itemName=vstirbu.vscode-mermaid-preview[Mermaid Preview extension]. 

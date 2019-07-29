@@ -56,13 +56,13 @@ _01_appendix.adoc_, you'll have noticed, is prefixed with a two digit number. Li
 
 == Manuscript Configuration
 
-Manuscripts are configured in the master.adoc file on the _src_ folder.
+Manuscripts are configured in the _master.adoc_ file in the _src_ folder.
 
 === Attributes
 
-Attributes are listed at the top of the master.adoc file. Some are self-explanatory, others less so. See https://asciidoctor.org/docs/user-manual/#attributes[attributes] section of the Asciidoctor manual for more information.
+Attributes are listed at the top of the _master.adoc_ file. Some are self-explanatory, others less so. See https://asciidoctor.org/docs/user-manual/#attributes[attributes] section of the Asciidoctor manual for more information.
 
-One of the benefits of using asciidoctor is its very useful _include_ directive. This allows an asciidoc manuscript to be broken into several files, disassembled one might say, that are then reassembled when the manuscript is compiled. Here is a snippet from _master.adoc_ that illustrates how the _include_ directive is used to perform this reassembly:
+One of the benefits of using Asciidoctor is its very useful _include_ directive. This allows an asciidoc manuscript to be broken into several files, disassembled one might say, that are then reassembled when the manuscript is compiled. Here is a snippet from _master.adoc_ that illustrates how the _include_ directive is used to perform this reassembly:
 
 [source,console]
 ....
@@ -84,6 +84,8 @@ One of the benefits of using asciidoctor is its very useful _include_ directive.
 
  include::back_matter/colophon.adoc[]
 ....
+
+At compile time, Asciidoctor places the contents of the file referenced by the _include_ directive into the master document at the location of the directive. Learn more about the _include_ directive at the https://asciidoctor.org/docs/user-manual/#include-partitioning[Asciidoctor Manual] page.
 
 {{% notice note %}} 
 Notice that the _include_ directives for the index are enclosed in an if...then block. HTML does not support indexing, so an index will only be produced when compiling a PDF or a Docbook file.
