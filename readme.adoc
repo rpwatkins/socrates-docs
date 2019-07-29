@@ -1,5 +1,4 @@
 image::https://api.netlify.com/api/v1/badges/9db53d3a-27f1-4907-902a-564e6bb01761/deploy-status[]
-image::https://app.netlify.com/sites/socratesdoc/deploys[]
 
 = Socrates Asciidoctor Manuscript Tool
 
