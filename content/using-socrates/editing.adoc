@@ -7,7 +7,7 @@ weight: 20
 
 == Editing a Project
 
-Manuscripts files can be edited with any modern text editor. I recommend VS Code (see Additional Tools).
+Manuscripts files can be edited with any modern text editor. I recommend VS Code (see link:../../getting-started/tools[Additional Tools]).
 
 Since we are using Asciidoctor, we do not have to have everything in one large cumbersome file. As noted above, manuscripts can be broken into multiple files, as has been done in Socrates' default _init_ project structure. 
 
@@ -16,19 +16,19 @@ Since we are using Asciidoctor, we do not have to have everything in one large c
 
 New parts or chapters of a manuscript can be added manually using your file system using any folder structure and file names you wish. 
 
-{{% notice note %}} 
-You do not need to use the suggested structure of the default project created with the _init_ command. All that matters is that whatever file structure you choose, the elements of the manuscript have the correct _include_ directives in the correct order in _master.adoc_.
+{{% notice note %}}
+You do not need to use the suggested structure of the default project created with the _init_ command. All that matters is that whatever file structure you choose, the elements of the manuscript hav.e the correct _include_ directives in the correct order in _master.adoc_.
 {{% /notice %}}
 
 === Editing with Socrates: The _new_ Command
 
-==== Parts Folder Structure
+Socrates was written to ease the use of Asciidoc for complex manuscripts. As mentioned, the _include_ directive makes this possible; Socrates makes it easy. I recommend using the defaults. The _new_ command can then be used to easily add further elements to you manuscript.
 
-{{% notice tip note %}} 
-If you do elect to use the suggested (default) folder structure and file names, Socrates provides a number of helper commands to maintain your project structure and files. That's part of why I built it.
-{{% /notice %}}
+==== Folder Structure Conventions
 
-A few words about conventions. The _parts_ folder is where most writers will spend the bulk of their time. This folder contains a folder for each part created. In the default project, the _parts_ folder contains a _01_part_ folder. All files for that part of the manuscript are contained in this folder, including the _01_part.adoc_ file itself and all the chapters (e.g., _01_chapter.adoc_ and so on) for this part.
+The _init_ campaign creates a default folder and file structure. That structure uses a munber of conventions. 
+
+The _parts_ folder is where most writers will spend the bulk of their time. The _parts_ folder contains a subfolder for each part created. For example, in the default project, the _parts_ folder contains a _01_part_ folder. All files for that part of the manuscript are contained in this folder, including the _01_part.adoc_ file itself and all the chapters (e.g., _01_chapter.adoc_ and so on) for this part.
 
 If you follow this folder structure, the _new_ command can be a great convenience. 
 
