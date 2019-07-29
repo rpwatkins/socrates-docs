@@ -1,0 +1,16 @@
+---
+title: "Source Installation"
+date: 2019-07-28T10:44:45-07:00
+draft: false
+weight: 30
+---
+
+== Source Install
+
+If you have Go 1.12 installed, Socrates can be installed via source code as follows:
+
+[source,console]
+----
+go get -u github.com/rpwatkins/socrates
+----
+

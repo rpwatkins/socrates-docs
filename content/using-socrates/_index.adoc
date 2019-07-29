@@ -1,0 +1,26 @@
+---
+title: "Using Socrates"
+date: 2019-07-28T10:44:45-07:00
+draft: false
+weight: 20
+---
+
+= Using Socrates
+
+Socrates provides commands to create projects, add elements to projects, and build the final PDF or HTML from the source files.
+
+Socrates accepts the following commands:
+
+Project Commands
+
+* init
+* new
+* clean
+* refresh
+
+Build Commands
+
+* pdf
+* fopub
+* html
+* docbook

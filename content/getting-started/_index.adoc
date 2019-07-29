@@ -1,0 +1,10 @@
+---
+title: "Installing Socrates"
+date: 2019-07-28T10:44:45-07:00
+draft: false
+weight: 10
+---
+
+= Installing Socrates
+
+The following pages explain how to install the pre-requisities for Socrates as well as Socrates itelf.  

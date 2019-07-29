@@ -1,0 +1,117 @@
+---
+title: "Creating a Project"
+date: 2019-07-28T10:44:45-07:00
+draft: false
+weight: 10
+---
+
+== Creating a New Project
+
+Create a new folder with a short name for your manuscript, e.g., "writing-project". This name will be used for the file name of the compiled manuscript.
+
+From within the new folder, initialize a Socrates project:
+
+[source,console]
+----
+socrates init
+----
+
+The init command creates the folder structure and preliminary files for a manuscript. All manuscript source files are placed in the _src_ folder.
+
+=== Folders
+
+Within the _src_ folder, the following folders are created:
+
+*assets*: to hold any files not used to compile your manuscript that you may wish to keep associated with the manuscript(e.g., PDFs of papers cited, notes, etc.).
+
+*back_matter*: to hold elements of a manuscript that follow the main text (e.g., appendix, bibliography, colophon, glossary, and index).
+
+*front_matter*: to hold elements of a manuscript prior to the main text (e.g., abstract, dedication, preface)
+ 
+*images*: to hold images used in the manuscript
+
+*parts*: to hold manuscript parts and chapters.
+
+*resources*: to hold PDF and HTML styles used to generate manuscript
+
+=== Files
+
+The init command also created several files:
+
+*src files*: _master.adoc_ (contains manuscript attributes and include directives) and references.bib (a placeholder file for references)
+
+*src/back_matter files*: _bibliography.adoc_, _colophon.adoc_, _glossary.adoc_, _index.adoc_, and _01_appendix.adoc_ (appendix is numbered since there may be more than one appendix).
+
+*src/front_matter files*: _abstract.adoc_, _dedication.adoc_, and _preface.adoc_.
+
+*src/resources*: A default PDF style is also saved to _src/resources/pdfstyles/default-style.yml_.
+
+{{% notice note %}}
+_src/master.adoc_ contains _include_ directives for all the above files. If you do not need one or more of the default files in your manuscript, simply delete the _include_ directive in _master.adoc_. 
+{{% /notice %}}
+
+== Manuscript Configuration
+
+Manuscripts are configured in the master.adoc file on the _src_ folder.
+
+=== Attributes
+
+Attributes are listed at the top of the master.adoc file. Some are self-explanatory, others less so. See https://asciidoctor.org/docs/user-manual/#attributes[attributes] section of the Asciidoctor manual for more information.
+
+One of the benefits of using asciidoctor is its very useful _include_ directive. This allows an asciidoc manuscript tp be broken into several files that are then "reassembled" when the manuscript is compiled. Here is a snippet from master.adoc that illustrates how the _include_ directive is used to perform this "reassembly":
+
+[source,console]
+....
+ include::front_matter/dedication.adoc[]
+ include::front_matter/preface.adoc[]
+ include::parts/01_part/01_part.adoc[]
+ include::parts/01_part/01_chapter.adoc[leveloffset=+1]
+ include::back_matter/01_appendix.adoc[]
+ include::back_matter/glossary.adoc[]
+ include::back_matter/bibliography.adoc[]
+
+ ifdef::backend-pdf[]
+ include::back_matter/index.adoc[]
+ endif::[]
+
+ ifdef::backend-docbook5[]
+ include::back_matter/index.adoc[]
+ endif::[]
+
+ include::back_matter/colophon.adoc[]
+....
+
+{{% notice note %}} 
+Notice that the _include_ directives for the index are enclosed in an if...then block. HTML does not support indexing, so an index will only be produced when compiling a PDF or a Docbook file.
+{{% /notice %}}
+
+=== Manuscripts with Parts (default)
+
+The _include_ directives reassemble the manuscript in the order of appearance. The above set of _include_ directives is for a manuscript with multiple parts, each with a set of chapters. This is the default setup created with the _init_ command.
+
+=== Manuscripts without Parts 
+
+Not all manuscripts need parts. In that case, simply remove the include for the _01_part.adoc_ file. Also, remove the _leveloffset_ for chapters (see the Asciidoctor Manual).
+
+[source,console]
+....
+ include::front_matter/dedication.adoc[]
+ include::front_matter/preface.adoc[]
+ include::parts/01_part/01_chapter.adoc[]
+ include::back_matter/01_appendix.adoc[]
+ include::back_matter/glossary.adoc[]
+ include::back_matter/bibliography.adoc[]
+
+ ifdef::backend-pdf[]
+ include::back_matter/index.adoc[]
+ endif::[]
+
+ ifdef::backend-docbook5[]
+ include::back_matter/index.adoc[]
+ endif::[]
+
+ include::back_matter/colophon.adoc[]
+....
+
+
+

@@ -1,0 +1,38 @@
+---
+title: "Binary Installation"
+date: 2019-07-28T10:44:45-07:00
+draft: false
+weight: 20
+---
+
+Socrates is available for Linux, MacOS, and Windows (32 & 64 bit). All releases are available at the https://github.com/rpwatkins/socrates/releases[Socrates releases] page at Github.
+
+{{% notice note %}} 
+Note: The instructions below install the 64 bit build. 32 bit builds are also available from the https://github.com/rpwatkins/socrates/releases[release page].
+{{% /notice %}}
+
+
+== GNU/Linux
+
+[source,console]
+----
+wget https://github.com/rpwatkins/socrates/releases/download/v0.0.1/socrates_0.0.2_linux_amd64.tar.gz
+tar -xvzf socrates_0.0.2_linux_amd64.tar.gz
+sudo mv socrates /usr/local/bin/socrates
+----
+
+== MacOS
+
+[source,console]
+----
+curl -OL https://github.com/rpwatkins/rpwatkins/releases/download/v0.0.1/socrates_0.0.2_darwin_amd64.tar.gz
+tar -xvzf socrates_0.0.2_darwin_amd64.tar.gz
+sudo mv socrates /usr/local/bin/socrates
+# or if you have ~/bin folder setup in the environment PATH variable
+mv buffalo ~/bin/socrates
+----
+
+== Windows
+
+Download the windows release from the https://github.com/rpwatkins/socrates/releases[Releases page], extract the socrates.exe file, and place the socrates executable somewhere on your path.
+

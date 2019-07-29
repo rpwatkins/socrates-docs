@@ -1,0 +1,88 @@
+---
+title: "Editing a Project"
+date: 2019-07-28T10:44:45-07:00
+draft: false
+weight: 20
+---
+
+== Editing a Project
+
+Manuscripts files can be edited with any modern text editor. I recommend VS Code (see Additional Tools).
+
+Since we are using Asciidoctor, we do not have to have everything in one large cumbersome file. As noted above, manuscripts can be broken into multiple files, as has been done in Socrates' default _init_ project structure. 
+
+
+=== Manual Editing
+
+New parts or chapters of a manuscript can be added manually using your file system using any folder structure and file names you wish. 
+
+{{% notice note %}} 
+You do not need to use the suggested structure of the default project. All that matters is that whatever file structure you choose, the elements of the manuscript have the correct _include_ directives in the correct order in _master.adoc_.
+{{% /notice %}}
+
+=== Editing with Socrates
+
+==== Parts Folder Structure
+
+{{% notice tip note %}} 
+If you do elect to use the suggested (default) folder structure and file names, Socrates provides a number of helper commands to maintain your project structure and files.
+{{% /notice %}}
+
+A few words about conventions. The _parts_ folder is where most writers will spend the bulk of their time. This folder contains the part and chapter asciidoc files. In the default project, the _parts_ folder contains a _01_part_ folder. (I named it as such so that parts appear in order in my file browser, but you can choose any named you wish.) All files for that part of the manuscript are contained in this folder, including the _01_part.adoc_ file itself and all the chapters (e.g., _01_chapter.adoc_) for this part.
+
+If you follow this folder structure, the helper commands can be a great convenience. 
+
+==== The _new_ command
+
+From the root folder of your project (not the _src_ folder), execute the following command:
+
+[source,console]
+----
+socrates new
+----
+
+This will display a help message listing the three available commands: _appendix, part, chapter_. 
+
+===== appendix
+
+The _appendix_ command creates a new appendix using the provided name:
+
+[source,console]
+----
+socrates new appendix new-appendix
+----
+
+This will create _new-appendix.adoc_ in the _back_matter_ folder. It will also placed an _include_ directive for this element of the manuscript at the bottom is the _master.adoc_ file. You may then move the _include_ directive to the correct position.
+
+===== part
+
+The _part_ command create a new part file. The file is placed in a folder of the same name within the _parts_ folder.
+
+[source,console]
+----
+socrates new part 02_part
+----
+
+This command will place _02_part.adoc_ in the _02_part_ created in the _parts_ folder.
+
+===== chapter
+
+The _chapter_ command creates a new chapter file and places it in the folder for the part entered:
+
+[source,console]
+----
+socrates new chapter 02_chapter 01_part
+----
+
+This command creates a _02_chapter.adoc_ file in the _01_part_ folder.
+
+==== The _refresh_ command
+
+The _refresh_ command creates any missing manuscript files:
+
+[source,console]
+----
+socrates refresh
+----
+
+If any of the default folders or files are missing, _refresh_ will create them. _create_ does not over-write any existing files.

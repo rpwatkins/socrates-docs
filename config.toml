@@ -1,0 +1,34 @@
+baseURL = "https://socratesdoc.netlify.com"
+languageCode = "en-us"
+title = "Socrates Documentation"
+author = "Rod Watkins"
+
+
+# Change the default theme to be use when building the site with Hugo
+theme = "hugo-theme-learn"
+
+# For search functionality
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[params]
+themeVariant = "blue"
+
+[[menu.shortcuts]] 
+name = "<i class='fab fa-github'></i> Github repo"
+identifier = "ds"
+url = "https://github.com/rpwatkins/socrates"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-book'></i> Asciidoctor Web Site"
+identifier = "asciidoctor"
+url = "https://asciidoctor.org"
+weight = 20
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-book'></i> Asciidoctor Manual"
+identifier = "asciidoctor-manual"
+url = "https://asciidoctor.org/docs/user-manual/"
+weight = 30
+
