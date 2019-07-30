@@ -11,7 +11,7 @@ Socrates can compile a asciidoc manuscript into single HTML and PDF files.
 
 === Checking a Project
 
-Socrates performs a check for any missing files referenced by _include_ directives in _master.adoc_ as well as check for the _references.bib_ file. This check is run before every build. But it can also be run independently by using the _check_ command.
+Socrates performs a check for any missing files referenced by _include_ directives in _master.adoc_ as well as a check for the _references.bib_ file. This check is run before every build. But it can also be run independently by using the _check_ command.
 
 [source,console]
 ----
@@ -29,7 +29,7 @@ Socrates is configured to produce a single HTML file from your asciidoc source f
 socrates html
 ----
 
-This will produce a self-contained HTML file in the _builds_ folder of your project.
+This will produce a self-contained HTML file in the _build_ folder of your project.
 
 === Building a PDF File with https://github.com/asciidoctor/asciidoctor-pdf[Asciidoctor-pdf]
 
@@ -40,7 +40,7 @@ Socrates _pdf_ uses the default style (in the _resources/pdfstyles_ folder) to c
 socrates pdf
 ----
 
-This will create a PDF in the _builds_ folder.
+This will create a PDF in the _build_ folder.
 
 The default style can be edited to change the layout, fonts, etc. of the PDF produced. More more information on configuring the styles, see https://github.com/asciidoctor/asciidoctor-pdf/blob/master/docs/theming-guide.adoc[Asciidoctor-pdf Theming Guide]
 
@@ -53,7 +53,7 @@ Socrates _fopub_ uses the Asciidoctor-fopub docbook tool-chain to create a PDF f
 socrates fopub
 ----
 
-This will create a PDF in the _builds_ folder.
+This will create a PDF in the _build_ folder.
 
 See the link:../../getting-started/prereqs[Prerequisites] page for details on installing Asciidoctor-fopub.
 
@@ -66,4 +66,4 @@ Socrates _docbook_ command creates a DocBook 5 file from the asciidoc source fil
 socrates docbook
 ----
 
-This will create a PDF in the _builds_ folder.
+This will create a PDF in the _build_ folder.
