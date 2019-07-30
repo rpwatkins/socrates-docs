@@ -56,16 +56,3 @@ socrates docbook
 ----
 
 This will create a PDF in the _builds_ folder.
-
-=== Cleaning Builds 
-
-To empty the _builds_ folder of all builds, use the Socrates _clean_ command:
-
-[source,console]
-----
-socrates clean
-----
-
-This removes all build files (HTML and PDF) from the _builds_ folder.
-
-
