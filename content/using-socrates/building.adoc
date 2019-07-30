@@ -9,13 +9,24 @@ weight: 30
 
 Socrates can compile a asciidoc manuscript into single HTML and PDF files.
 
+=== Checking a Project
+
+Socrates performs a check for any missing files referenced by _include_ directives in _master.adoc_ as well as check for the _references.bib_ file. This check is run before every build. But it can also be run independently by using the _check_ command.
+
+[source,console]
+----
+socrates check
+----
+
+The _check_ command will report any missing files.
+
 === Building an HTML File
 
 Socrates is configured to produce a single HTML file from your asciidoc source files. This includes compiling any images by using the https://asciidoctor.org/docs/user-manual/#managing-images[_data-uri_] attribute. To build an HTML file, enter:
 
 [source,console]
 ----
-socrates HTML
+socrates html
 ----
 
 This will produce a self-contained HTML file in the _builds_ folder of your project.
