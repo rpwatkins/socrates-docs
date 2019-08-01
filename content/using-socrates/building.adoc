@@ -7,9 +7,12 @@ weight: 30
 
 == Building a Project
 
-Socrates can compile a asciidoc manuscript into single HTML and PDF files.
+Socrates can compile an asciidoc manuscript into an HTML, DocBook, or PDF file. Whether building a PDF, DocBook, or HTML file, the build proceeds int two steps:
 
-=== Checking a Project
+. Validation
+. Compilation
+
+=== Validation
 
 Socrates performs a check for any missing files referenced by _include_ directives in _master.adoc_ as well as a check for the _references.bib_ file. This check is run before every build. But it can also be run independently by using the _check_ command.
 
@@ -18,29 +21,31 @@ Socrates performs a check for any missing files referenced by _include_ directiv
 socrates check
 ----
 
-The _check_ command will report any missing files.
+The _check_ command will report any missing files. The _check_ command will recursively scan for all included files in the project. 
+
+If validation passes, compilation begins using the external tools we installed earlier.
 
 === Building an HTML File
 
-Socrates is configured to produce a single HTML file from your asciidoc source files. This includes compiling any images by using the https://asciidoctor.org/docs/user-manual/#managing-images[_data-uri_] attribute. To build an HTML file, enter:
+Socrates is configured to produce an HTML file from your asciidoc source files. Any images needed  To build an HTML file, enter:
 
 [source,console]
 ----
 socrates html
 ----
 
-This will produce a self-contained HTML file in the _build_ folder of your project.
+This will produce an HTML file in the _build/html_ folder of your project Any images needed for the project are copied to the _build/html/images_ folder.
 
 === Building a PDF File with https://github.com/asciidoctor/asciidoctor-pdf[Asciidoctor-pdf]
 
-Socrates _pdf_ uses the default style (in the _resources/pdfstyles_ folder) to create a PDF file from the asciidoc source files. To build a PDF, enter:
+Socrates _pdf_ uses the default style (in the _resources/pdfstyles_ folder) to create a PDF file from the asciidoc source files. Images are copied to _build/pdf/images_ folder. To build a PDF, enter:
 
 [source,console]
 ----
 socrates pdf
 ----
 
-This will create a PDF in the _build_ folder.
+This will create a PDF in the _build/pdf_ folder.
 
 The default style can be edited to change the layout, fonts, etc. of the PDF produced. More more information on configuring the styles, see https://github.com/asciidoctor/asciidoctor-pdf/blob/master/docs/theming-guide.adoc[Asciidoctor-pdf Theming Guide]
 
@@ -53,17 +58,17 @@ Socrates _fopub_ uses the Asciidoctor-fopub docbook tool-chain to create a PDF f
 socrates fopub
 ----
 
-This will create a PDF in the _build_ folder.
+This will create a PDF in the _build_ folder. Images are copied to _build/pdf/images_ folder. 
 
 See the link:../../getting-started/prereqs[Prerequisites] page for details on installing Asciidoctor-fopub.
 
 === Building a DocBook 5 XML File
 
-Socrates _docbook_ command creates a DocBook 5 file from the asciidoc source files. To build a Docbook file, enter:
+Socrates _docbook_ command creates a DocBook 5 file from the asciidoc source files. Images are copied to _build/pdf/images_ folder.  To build a DocBook file, enter:
 
 [source,console]
 ----
 socrates docbook
 ----
 
-This will create a PDF in the _build_ folder.
+This will create a DocBook 5 XML file in the _build/docbook_ folder.

@@ -14,75 +14,55 @@ Since we are using Asciidoctor, we do not have to have everything in one large c
 
 === Manual Editing
 
-New parts or chapters of a manuscript can be added manually using your file system using any folder structure and file names you wish. 
+New elements of a manuscript can be added manually using your file system using any folder structure and file names you wish. 
 
 {{% notice note %}}
-You do not need to use the suggested structure of the default project created with the _init_ command. All that matters is that whatever file structure you choose, the elements of the manuscript hav.e the correct _include_ directives in the correct order in _master.adoc_.
+You do not need to use the suggested structure of the default project created with the _init_ command. All that matters is that whatever file structure you choose, the elements of the manuscript have the correct _include_ directives in the correct order in _master.adoc_. Fortunately, you can use the _check_ command to validate your _include_ directives.
 {{% /notice %}}
 
 === Editing with Socrates: The _new_ Command
 
-Socrates was written to ease the use of Asciidoc for complex manuscripts. As mentioned, the _include_ directive makes this possible; Socrates makes it easy. I recommend using the defaults. The _new_ command can then be used to easily add further elements to you manuscript.
+Socrates was written to ease the use of Asciidoc for complex manuscripts. As mentioned, the _include_ directive makes this possible; Socrates makes it easy. The _new_ command can then be used to easily add further elements to you manuscript.
 
-==== Folder Structure Conventions
+With the _new_ command, one can create a new asciidoc file at any path within the root folder. 
 
-The _init_ campaign creates a default folder and file structure. That structure uses a munber of conventions. 
-
-The _parts_ folder is where most writers will spend the bulk of their time. The _parts_ folder contains a subfolder for each part created. For example, in the default project, the _parts_ folder contains a _01_part_ folder. All files for that part of the manuscript are contained in this folder, including the _01_part.adoc_ file itself and all the chapters (e.g., _01_chapter.adoc_ and so on) for this part.
-
-If you follow this folder structure, the _new_ command can be a great convenience. 
-
-==== The _new_ command
-
-From the root folder of your project (not from the _src_ folder), execute the following command:
+For example, from the root folder of your project, execute the following command:
 
 [source,console]
 ----
-socrates new
+socrates new parts/part_01/chapters/chapter_02.adoc
 ----
 
-This will display a help message listing the three available commands: _appendix, part, chapter_. As already noted, manuscripts can contain multiple parts, chapters, and appendixes. The _new_ command helps add additional parts, chapters, and appendixes.
+This command creates _chapter_02.adoc_ in the folder _parts/part_01/chapters_ folder (itself in the project root).
 
-===== appendix
+As you can see, the _new_ command allows one to use any folder and file structure and as deeply nested as one likes. What makes the _new_ command doubly useful is that when it completes, it displays an _include_ directive you can copy and paste into its parent file, whether that be _master.adoc_, as in this case, or any other project asciidoc file.
 
-The _appendix_ command creates a new appendix using the provided name:
+Another example may help.
 
 [source,console]
 ----
-socrates new appendix new-appendix
+socrates new parts/part_01/chapters/chapter_02_inc_01.adoc
 ----
 
-This will create _new-appendix.adoc_ in the _back_matter_ folder. An _include_ directive for this element of the manuscript will be saved at the bottom of the _master.adoc_ file. You may then move the _include_ directive to the correct location.
+In this case, we added an include file that is meant to be added to chapter_02.adoc. Again, the name is up to you.
 
-===== part
-
-The _part_ command create a new part file. The file is placed in a folder of the same name within the _parts_ folder.
+When the _new_ command completes, it will display an _include_ directive. In this case it looks like this:
 
 [source,console]
 ----
-socrates new part 02_part
+ include::parts/part_01/chapters/chapter_02_inc_01.adoc[]
 ----
 
-This command will place the _02_part.adoc_ file in the _02_part_ folder created within the _parts_ folder.
-
-===== chapter
-
-The _chapter_ command creates a new chapter file and places it in the folder for the part entered:
+Useful as that may be, it is not what we want. Since we placed the include file in the same folder as its parent _chapter_02.adoc_, we need to adjust the path in the _include_ directive to remove the undeeded elements of the path as follows:
 
 [source,console]
 ----
-socrates new chapter 02_chapter 01_part
+ include::chapter_02_inc_01.adoc[]
 ----
 
-This command creates a _02_chapter.adoc_ file in the _01_part_ folder.
+{{% notice tip %}}
+Always double check the _include_ directive's path to make sure the parent asciidoc file can find the include file. Good news! The _check_ command can be used to confirm your project's _include_ directives are valid. 
+{{% /notice %}}
 
-==== The _refresh_ command
 
-The _refresh_ command creates any missing manuscript files:
 
-[source,console]
-----
-socrates refresh
-----
-
-If any of the default folders or files are missing, _refresh_ will create them. The _create_ command does not over-write any existing files.

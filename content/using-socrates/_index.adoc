@@ -13,13 +13,13 @@ Socrates accepts the following commands:
 
 Project Commands
 
+* check
 * init
 * new
-* refresh
 
 Build Commands
 
-* pdf
+* docbook
 * fopub
 * html
-* docbook
+* pdf

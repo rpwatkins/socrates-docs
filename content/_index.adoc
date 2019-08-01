@@ -5,10 +5,12 @@ draft: false
 ---
 
 == SOCRATES
+
 === Easing the use of Asciidoctor to produce manuscripts.
 
-Socrates is a front-end CLI written in Go for creating and compiling manuscripts from asciidoc files. It uses the Asciidoctor tool-chain to create manuscript from a set of files. Socrates is written in Go so it produces a single executable file with no dependencies, making it easy to install and update.
+Socrates is a front-end CLI written in Go for creating and compiling manuscripts from asciidoc files. It uses the http://asciidoctor.rg[Asciidoctor] tool-chain to create manuscript from a set of files. Socrates is written in Go so it produces a single executable file with no dependencies, making it easy to install and update.
 
 Asciidoc is a well-designed language for producing rich and complicated manuscripts. Socrates eases the use of Asciidoc by providing a front-end to the Asciidoctor compiler that eases and speeds up development of a manuscript. Socrates assists in setting up a manuscript project, adding new items, and compiling those files into a final manuscript in PDF or HTML format.
 
 Best of all, every file needed to construct a manuscript is entirely text, which means it can be easily version-controlled in Git!
+
