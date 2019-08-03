@@ -43,17 +43,6 @@ Citation and bibliography support is provided by the https://github.com/ribosein
 
 Please review the web sites for those tools to learn how to configure and use them.
 
-=== Asciidoctor-pdf Style Fonts
-
-Sane defaults have been chosen for the default PDF output from Asciidoctor-pdf. The default configuration requires fonts which may not be installed on your system. Socrates default PDF style configuration requires three fonts:
-
-* Noto Serif (available at https://fonts.google.com/specimen/Noto+Serif?selection.family=Noto+Serif)[Google Fonts]) is the primary font. Noto Serif has very good language support and has a clean appearance.
-* M+ 1nm and M+ 1p (https://github.com/rayshan/mplus-fonts[available here]) are fallback fonts and are used for some symbols.
-
-To use the default style configuration, you must download the fonts and use your operating system font tool to install them.
-
-You are not required to use the default style configuration found in the _default-theme.yml_ file in the _src/resources/pdfstyles_ folder. Not only can you select different fonts, but a host of other settings. See the https://github.com/asciidoctor/asciidoctor-pdf/blob/master/docs/theming-guide.adoc[Asciidoctor-pdf Theming Guide] for more information.
-
 === Asciidoctor-fopub Support (optional)
 
 Socrates can also generate PDF files using the Asciidoctor-fopub tool-chain. See the https://github.com/asciidoctor/asciidoctor-fopub[Asciidoctor-fopub] github repository for instructions on installing the tool-chain. 

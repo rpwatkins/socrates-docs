@@ -1,0 +1,40 @@
+---
+title: "Understanding the Tools Behind Socrates"
+date: 2019-07-28T10:44:45-07:00
+draft: true
+weight: 20
+---
+
+= Understanding the Tools Behind Socrates
+
+Socrates generates HTML and PDF documents from a related set of files. These file contain only plain text. That is why they are easy to version control in Git. These files contain text written using several _markup languages_. In simple terms, a markup language is a way of _marking up_ ordinary text so that an specially programmed _interpetter_ can understand what to do with the text when it is rendered. HTML, for instance, is a markup language. 
+
+== Markup Languages
+
+Socartes of course relies on the Asciidoc markup language. Socrates also relies on these other markup languages:
+
+* bibtex (a markup language used to store references in the references.bib file).
+* yaml (a markup language used in the default-style.yml file in resources/pdfstyles).
+* All of the markup languages used to create diagrams that are supported by Asciidoctor-diagram (e.g., mermaid, plantuml, and so on).
+
+== Build Tools
+
+Asciidoctor (and Asciidoctor-pdf) are compilers that produce HTML (and PDF) files from asciidoc files. Socrates was designed to serve as a front-end to these two build tools.
+
+== Filters
+
+Socrates also relies on two tools that are used during the compile phase to change or add elements to a manuscipt.
+
+Asciidoctor-bibliography is used to generate citations with a manuscript and generate a bibliography page in the back matter. 
+
+If you work involve sharing code of any sort, Socrates supports source highlighting through Rouge. Properly marked up blocks will be passed through a filter to apply a color theme to the source code being displayed.
+
+There are a wide number of diagram markup languages supported through Asciidoctor-diagram. 
+
+This is meant to be a short introduction to the tools. Guides on using many of them follow.
+
+== Git
+
+Why the emphasis on plain text files? Because plain text file are easily version controlled. Using Git (or your preferred VCS), you can track every file and every line of every file for changes over time. It is time to bring the fantastic version control tools in the programming world to the world of writing. But that is a seperate guide.
+
+

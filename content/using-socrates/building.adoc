@@ -12,16 +12,18 @@ Socrates can compile an asciidoc manuscript into an HTML, DocBook, or PDF file. 
 . Validation
 . Compilation
 
-=== Validation
+=== Validating _includes_ with the _list_ Command
 
-Socrates performs a check for any missing files referenced by _include_ directives in _master.adoc_ as well as a check for the _references.bib_ file. This check is run before every build. But it can also be run independently by using the _check_ command.
+Socrates recursively performs a check for any missing files referenced by _include_ directives in _master.adoc_ as well as a check for the _references.bib_ file. This check is run before every build. But it can also be run independently by using the _list_ command.
+
+The _list_ command will display a tree of a project's _include_ directives. Any missing files will be noted in red with the path to the missing file.
 
 [source,console]
 ----
-socrates check
+socrates list
 ----
 
-The _check_ command will report any missing files. The _check_ command will recursively scan for all included files in the project. 
+The _list_ command will report any missing files. The _list_ command will recursively scan for all included files in the project. 
 
 If validation passes, compilation begins using the external tools we installed earlier.
 

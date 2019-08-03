@@ -13,8 +13,8 @@ Socrates accepts the following commands:
 
 Project Commands
 
-* check
 * init
+* list
 * new
 
 Build Commands

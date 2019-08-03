@@ -17,7 +17,7 @@ Since we are using Asciidoctor, we do not have to have everything in one large c
 New elements of a manuscript can be added manually using your file system using any folder structure and file names you wish. 
 
 {{% notice note %}}
-You do not need to use the suggested structure of the default project created with the _init_ command. All that matters is that whatever file structure you choose, the elements of the manuscript have the correct _include_ directives in the correct order in _master.adoc_. Fortunately, you can use the _check_ command to validate your _include_ directives.
+You do not need to use the suggested structure of the default project created with the _init_ command. All that matters is that whatever file structure you choose, the elements of the manuscript have the correct _include_ directives in the correct order in _master.adoc_. Fortunately, you can use the _list_ command to validate your _include_ directives.
 {{% /notice %}}
 
 === Editing with Socrates: The _new_ Command
@@ -61,7 +61,7 @@ Useful as that may be, it is not what we want. Since we placed the include file 
 ----
 
 {{% notice tip %}}
-Always double check the _include_ directive's path to make sure the parent asciidoc file can find the include file. Good news! The _check_ command can be used to confirm your project's _include_ directives are valid. 
+Always double check the _include_ directive's path to make sure the parent asciidoc file can find the include file. Good news! The _list_ command can be used to confirm your project's _include_ directives are valid. 
 {{% /notice %}}
 
 

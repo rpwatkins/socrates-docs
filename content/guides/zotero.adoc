@@ -1,0 +1,21 @@
+---
+title: "Managing References with Socrates and Zotero"
+date: 2019-07-28T10:44:45-07:00
+draft: true
+weight: 30
+---
+
+= Managing References with Socrates and Zotero
+
+The purpose of this guide is to illustrate how to generate in text
+
+Socrates support the generation of citations and a bibliography through Asciidoctor-bibiliography. This requires a _references.bib_ file (created by _init_) that contains bibtex compliant references. One could of course manually edit the references in _references.bib_, but it is far easier to have a citation manager do this for you. Many citation managers can export in bibtex format.
+
+Zotero is a free and open-source bibliographic database and manager. It can easily export bibtex compliant files of the sort we need.
+
+== Installing Zotero
+
+== Exporting References
+
+== Citations and the Bibliography
+
