@@ -20,8 +20,8 @@ To install on any GNU/Linux operating system (Ubuntu, Red Hat, Debian, Manjaro, 
 
 [source,console]
 ----
-wget https://github.com/rpwatkins/socrates/releases/download/v0.5.0/socrates_0.5.0_linux_amd64.tar.gz
-tar -xvzf socrates_0.5.0_linux_amd64.tar.gz
+wget https://github.com/rpwatkins/socrates/releases/download/v0.6.0/socrates_0.6.0_linux_amd64.tar.gz
+tar -xvzf socrates_0.6.0_linux_amd64.tar.gz
 sudo mv socrates /usr/local/bin/socrates
 ----
 
@@ -31,8 +31,8 @@ To install on MAC operating system, run these commands in the terminal:
 
 [source,console]
 ----
-curl -OL https://github.com/rpwatkins/rpwatkins/releases/download/v0.5.0/socrates_0.5.0_darwin_amd64.tar.gz
-tar -xvzf socrates_0.5.0_darwin_amd64.tar.gz
+curl -OL https://github.com/rpwatkins/rpwatkins/releases/download/v0.6.0/socrates_0.6.0_darwin_amd64.tar.gz
+tar -xvzf socrates_0.6.0_darwin_amd64.tar.gz
 sudo mv socrates /usr/local/bin/socrates
 # or if you have ~/bin folder setup in the environment PATH variable
 mv buffalo ~/bin/socrates

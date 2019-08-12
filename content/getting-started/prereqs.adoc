@@ -41,7 +41,7 @@ https://mermaidjs.github.io/#/[Mermaid] (and many other) diagram tools are suppo
 
 Citation and bibliography support is provided by the https://github.com/riboseinc/asciidoctor-bibliography[Asciidoctor-bibliography] tool.
 
-Please review the web sites for those tools to learn how to configure and use them.
+Please review the web sites for those tools to learn how to configure and use them. 
 
 === Asciidoctor-fopub Support (optional)
 

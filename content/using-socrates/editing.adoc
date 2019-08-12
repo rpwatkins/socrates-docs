@@ -17,7 +17,7 @@ Since we are using Asciidoctor, we do not have to have everything in one large c
 New elements of a manuscript can be added manually using your file system using any folder structure and file names you wish. 
 
 {{% notice note %}}
-You do not need to use the suggested structure of the default project created with the _init_ command. All that matters is that whatever file structure you choose, the elements of the manuscript have the correct _include_ directives in the correct order in _master.adoc_. Fortunately, you can use the _list_ command to validate your _include_ directives.
+You do not need to use the suggested structure of the default project created with the _init_ command. All that matters is that whatever file structure you choose, the elements of the manuscript have the correct _include_ directives in the correct order in _master.adoc_. Fortunately, you can use the _check_ command to validate your _include_ directives.
 {{% /notice %}}
 
 === Editing with Socrates: The _new_ Command
@@ -30,18 +30,18 @@ For example, from the root folder of your project, execute the following command
 
 [source,console]
 ----
-socrates new parts/part_01/chapters/chapter_02.adoc
+socrates new parts/part_01/chapters/chapter_02/chapter_02.adoc
 ----
 
-This command creates _chapter_02.adoc_ in the folder _parts/part_01/chapters_ folder (itself in the project root).
+This command creates _chapter_02.adoc_ in the folder _parts/part_01/chapters/chapter_02_ folder (itself in the project root).
 
-As you can see, the _new_ command allows one to use any folder and file structure and as deeply nested as one likes. What makes the _new_ command doubly useful is that when it completes, it displays an _include_ directive you can copy and paste into its parent file, whether that be _master.adoc_, as in this case, or any other project asciidoc file.
+As you can see, the _new_ command allows one to use any folder and file structure and as deeply nested as one likes. What makes the _new_ command doubly useful is that when it completes, it displays an _include_ directive you can copy and paste into its parent file, whether that be _master.adoc_, as in this case, or any other asciidoc file.
 
 Another example may help.
 
 [source,console]
 ----
-socrates new parts/part_01/chapters/chapter_02_inc_01.adoc
+socrates new parts/part_01/chapters/chapter_02/include_01.adoc
 ----
 
 In this case, we added an include file that is meant to be added to chapter_02.adoc. Again, the name is up to you.
@@ -50,18 +50,18 @@ When the _new_ command completes, it will display an _include_ directive. In thi
 
 [source,console]
 ----
- include::parts/part_01/chapters/chapter_02_inc_01.adoc[]
+ include::parts/part_01/chapters/chapter_02/include_01.adoc[]
 ----
 
-Useful as that may be, it is not what we want. Since we placed the include file in the same folder as its parent _chapter_02.adoc_, we need to adjust the path in the _include_ directive to remove the undeeded elements of the path as follows:
+Useful as that may be, it is not what we want since include paths in Asciidoc are relative. Since we placed the include file in the same folder as its parent _chapter_02.adoc_, we need to adjust the path in the _include_ directive to remove the unneeded elements of the path as follows:
 
 [source,console]
 ----
- include::chapter_02_inc_01.adoc[]
+ include::include_01.adoc[]
 ----
 
 {{% notice tip %}}
-Always double check the _include_ directive's path to make sure the parent asciidoc file can find the include file. Good news! The _list_ command can be used to confirm your project's _include_ directives are valid. 
+Always double check the _include_ directive's path to make sure the parent asciidoc file can find the include file. Good news again! The _check_ command can be used to confirm your project's _include_ directives are valid. 
 {{% /notice %}}
 
 

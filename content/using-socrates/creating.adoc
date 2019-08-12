@@ -41,8 +41,8 @@ Within the folder created above (_hume-causation_), the following folders are cr
 *front_matter/*: to hold elements of a manuscript prior to the main text (e.g., abstract, dedication, preface)
  
 *images/*: to hold images used in the manuscript
-
-*parts/*: to hold manuscript parts and chapters.
+ 
+*parts/*: to hold manuscript files for parts and chapters.
 
 *resources/*: to hold PDF and HTML styles used to generate manuscript
 
@@ -50,16 +50,40 @@ Within the folder created above (_hume-causation_), the following folders are cr
 
 The init command also created several files:
 
-*/ (project root)*: _master.adoc_ (which contains manuscript _attributes_ statements and _include_ directives) and references.bib (which contains or will contain bibtex compliant references).
+*/ (project root)*: 
 
-*back_matter/*: _bibliography.adoc_, _colophon.adoc_, _glossary.adoc_, _index.adoc_, and _01_appendix.adoc_.
+** _master.adoc_ (contains manuscript _attributes_ statements and _include_ directives)
+** _references.bib_ (which contains or will contain bibtex compliant references)
+** _socrates.toml_ (contains Socrates configuration options)
 
-*front_matter/*: _abstract.adoc_, _dedication.adoc_, and _preface.adoc_.
+*back_matter/*: 
 
-*resources/pdfstyles/*: _default-style.yml_ (the default Asciidoctor-pdf style configuration file)
+** _bibliography.adoc_
+** _colophon.adoc_
+** _glossary.adoc_
+** _index.adoc_
+** _01_appendix.adoc_
+
+*front_matter/*: 
+
+** _abstract.adoc_
+** _dedication.adoc_
+** _preface.adoc_
+
+*_parts/part_01_/:*
+
+** _part_01.adoc_
+
+*_parts/part_01/chapters/chapter_01/_:*
+
+** _chapter_01.adoc_
+** _include_01.adoc_
+** _include_02.adoc_
+
+as well as numerous styles in the _resources_ folder.
 
 {{% notice note %}}
-_master.adoc_ contains _include_ directives for all the above files. If you do not need one or more of the default files in your manuscript, simply delete the _include_ directive in _master.adoc_. 
+By default, if Git is installed, a git repository will be created for a new project. To skip initializing a Git repository for a project, pass the --nogit (or -n) flag to the init command.
 {{% /notice %}}
 
 {{% notice note %}}
@@ -67,7 +91,7 @@ If you want a bare project (a basic master.adoc with no _include_ directives) an
 {{% /notice %}}
 
 {{% notice tip %}}
-_appendix_01.adoc_, you'll have noticed, is prefixed with a two digit number. Like parts and chapters, a manuscript can have multiple appendixes. Since there may be more than one appendix, naming them with a numerical prefix makes the files appear in the same order in file browsers as they appear in your _master.adoc_. 
+_appendix_01.adoc_, you'll have noticed, is named with a two digit number. Like parts and chapters, a manuscript can have multiple appendixes. Since there may be more than one appendix, naming them with a numerical suffix makes the files appear in the same order in file browsers as they appear in your _master.adoc_. 
 {{% /notice %}}
 
 == Manuscript Configuration
@@ -143,9 +167,9 @@ The last step is to simplify the _include_ directives in _master.adoc_ as follow
 
 There is no reason why you need to use the folder and file structure of the _init_ project. It is a mere suggested structure. 
 
-The only requirement for Socrates to validate and build asciidoc manuscripts (whether a single file or multiple nested files linked together by numerous include statements) is for the entry asciidoc file is called _master.adoc_.
+The only requirement for Socrates to validate and build asciidoc manuscripts (whether a single file or multiple nested files linked together by numerous include statements) is for the entry asciidoc file to be called _master.adoc_.
 
-If you do not want care for the default folder and file structure, delete everything but _master.adoc_ and remove all the _include_ directives in _master.adoc_.
+If you do not care for the default folder and file structure, delete everything but _master.adoc_ and remove all the _include_ directives in _master.adoc_. Or just init your project with the --bare flag.
 
 
 

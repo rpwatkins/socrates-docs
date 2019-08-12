@@ -11,21 +11,22 @@ Socrates generates HTML and PDF documents from a related set of files. These fil
 
 == Markup Languages
 
-Socartes of course relies on the Asciidoc markup language. Socrates also relies on these other markup languages:
+Socrates of course relies on the Asciidoc markup language. Socrates also relies on these other markup languages:
 
-* bibtex (a markup language used to store references in the references.bib file).
-* yaml (a markup language used in the default-style.yml file in resources/pdfstyles).
+* BIBTEX (a markup language used to store references in the _references.bib_ file).
+* YAML (a markup language used in the _default-style.yml_ file in _resources/pdfstyles_).
+* TOML (used for _socrates.toml_ configuration file)
 * All of the markup languages used to create diagrams that are supported by Asciidoctor-diagram (e.g., mermaid, plantuml, and so on).
 
 == Build Tools
 
-Asciidoctor (and Asciidoctor-pdf) are compilers that produce HTML (and PDF) files from asciidoc files. Socrates was designed to serve as a front-end to these two build tools.
+Asciidoctor (and Asciidoctor-pdf) are compilers that produce HTML (and PDF) files from asciidoc files. Socrates was designed to serve as a front-end to these build tools.
 
 == Filters
 
-Socrates also relies on two tools that are used during the compile phase to change or add elements to a manuscipt.
+Socrates also relies on two tools that are used during the compile phase to change or add elements to a manuscript at build time.
 
-Asciidoctor-bibliography is used to generate citations with a manuscript and generate a bibliography page in the back matter. 
+Asciidoctor-bibliography is used to generate in text citations and generate a bibliography page in the back matter. 
 
 If you work involve sharing code of any sort, Socrates supports source highlighting through Rouge. Properly marked up blocks will be passed through a filter to apply a color theme to the source code being displayed.
 
@@ -35,6 +36,11 @@ This is meant to be a short introduction to the tools. Guides on using many of t
 
 == Git
 
-Why the emphasis on plain text files? Because plain text file are easily version controlled. Using Git (or your preferred VCS), you can track every file and every line of every file for changes over time. It is time to bring the fantastic version control tools in the programming world to the world of writing. But that is a seperate guide.
+Why the emphasis on all these plain text files? Because plain text file are easily version controlled. Using Git (or your preferred RCS), you can track every file and every line of every file for changes over time. It is time to bring the fantastic version control tools in the programming world to the world of writing. See the Guide on Git.
 
+Most people likely use Microsoft Word or LibreOffice Write to author manuscripts. But these programs, though they provide a lovely GUI, are ultimately ill-suited to the task of writing a manuscript from beginning to end. Writing a lengthy manuscript is a long process of writing, editing, deleting, adding, more deleting and so on. In other words, a manuscript has a lifespan from opening a new file to the final manuscript. It is a process of fits and starts. And restarts. In other words, it is a series of revisions. What Socrates aims to help with is the task of recording, storing, and versioning those revisions.
+
+Coders write text too. And, just like a manuscript, the software development process is a series of revisions. Keeping a record of those revisions is crucial to understanding how the code developed over iterations as well as allowing reverting back to older code if needed.
+
+Of course MS Word has Document Tracking to allow some rudimentary revision control. But it is a poor substitute for the control and functionality of a proper revision control system like Git. But Git works best with plain text files. Hence Socrates.
 

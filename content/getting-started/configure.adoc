@@ -1,0 +1,34 @@
+---
+title: "Configuring Socrates"
+date: 2019-07-28T10:44:45-07:00
+draft: false
+weight: 30
+---
+
+= Configuring Socrates
+
+When the _init_ command is executed, it creates a _socrates.toml_ file in the root folder of the project. This file contains configuration options for the project. See https://github.com/toml-lang/toml[] for more information on the _TOML_ markup language.
+
+{{% notice note %}} 
+Configuration options are limited as of version 0.6.0. That will change in future versions.
+{{% /notice %}}
+
+== Build configuration
+
+By default, Socrates produces output files in the _build_ folder using the root folder name as the default file name. The output file can be configured in the _socrates.toml_ file. There is also an option to append the build time to the end of the file name.
+
+[source, toml]
+....
+# Socrates project configuration file.
+# https://github.com/rpwatkins/socrates
+# See https://github.com/toml-lang/toml for more 
+# information on the TOML markup language
+
+project = "sample"
+
+# output file name configuration 
+output = "sample"   # do not include file extension (e.g., PDF, HTML)
+timestamp = false   # add a time stamp to the end of the file name
+....
+
+
