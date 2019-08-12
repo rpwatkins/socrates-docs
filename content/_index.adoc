@@ -4,7 +4,7 @@ date: 2019-07-27T20:56:27-07:00
 draft: false
 ---
 
-== SOCRATES v0.6.0
+== SOCRATES (v0.6.0)
 
 === Easing the use of Asciidoctor to produce manuscripts.
 
